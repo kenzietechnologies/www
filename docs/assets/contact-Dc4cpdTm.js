@@ -1,4 +1,4 @@
-const n=`<main class="bg-zinc-100 dark:bg-zinc-700 py-24 sm:py-32">
+const e=`<main class="bg-zinc-100 dark:bg-zinc-700 py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-8">
     <div class="mx-auto max-w-2xl space-y-16 divide-y divide-slate-400 lg:mx-0 lg:max-w-none">
       <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
@@ -41,7 +41,7 @@ const n=`<main class="bg-zinc-100 dark:bg-zinc-700 py-24 sm:py-32">
               <div>
                 <dt class="sr-only">via cal.com</dt>
                 <dd>
-                  <a class="font-semibold text-green-700 hover:underline border-b border-green-700 dark:border-green-300 dark:text-green-300" href="https://cal.com/curiousmarkingsco/15min">Book a meeting</a>
+                  <a class="font-semibold text-green-700 hover:underline border-b border-green-700 dark:border-green-300 dark:text-green-300" href="https://cal.com/kenzietechnologies/15min">Book a meeting</a>
                 </dd>
               </div>
             </dl>
@@ -53,13 +53,13 @@ const n=`<main class="bg-zinc-100 dark:bg-zinc-700 py-24 sm:py-32">
               <div>
                 <dt class="font-bold">LinkedIn</dt>
                 <dd>
-                  <a class="text-green-700 hover:underline border-b border-green-700 dark:border-green-300 dark:text-green-300" href="https://www.linkedin.com/company/curiousmarkingsco">linkedin.com/company/curiousmarkingsco</a>
+                  <a class="text-green-700 hover:underline border-b border-green-700 dark:border-green-300 dark:text-green-300" href="https://www.linkedin.com/company/kenzietechnologies">linkedin.com/company/kenzietechnologies</a>
                 </dd>
               </div>
               <div>
                 <dt class="font-bold">GitHub</dt>
                 <dd>
-                  <a class="text-green-700 hover:underline border-b border-green-700 dark:border-green-300 dark:text-green-300" href="https://github.com/curiousmarkingsco">github.com/curiousmarkingsco</a>
+                  <a class="text-green-700 hover:underline border-b border-green-700 dark:border-green-300 dark:text-green-300" href="https://github.com/kenzietechnologies">github.com/kenzietechnologies</a>
                 </dd>
               </div>
             </dl>
@@ -94,4 +94,4 @@ const n=`<main class="bg-zinc-100 dark:bg-zinc-700 py-24 sm:py-32">
     </div>
   </div>
 </main>
-`;export{n as default};
+`;export{e as default};
