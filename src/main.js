@@ -11,7 +11,6 @@ const ROUTES = {
 	'/contact': '/pages/contact.html',
 	'/products-and-services': '/pages/products-and-services.html',
 	'/client-success-stories': '/pages/client-success-stories.html',
-	'/meet': '/pages/meet.html',
 	'/privacy-policy': '/pages/privacy-policy.html',
 	'/terms-of-service': '/pages/terms-of-service.html'
 };
