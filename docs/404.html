@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Page not found — redirecting…</title>
+    <script>
+      // SPA fallback: fetch the app shell (index.html) and restore the
+      // requested URL so the client-side router can take over.
+      (function () {
+        var requestedPath = location.pathname + location.search + location.hash;
+        var indexPath = 'index.html';
+
+        fetch(indexPath)
+          .then(function (resp) {
+            if (!resp.ok) throw new Error('index not found');
+            return resp.text();
+          })
+          .then(function (html) {
+            document.open();
+            document.write(html);
+            document.close();
+            try {
+              history.replaceState(null, '', requestedPath);
+            } catch (e) {
+              location.replace('/');
+            }
+          })
+          .catch(function () {
+            location.replace('/');
+          });
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to the app...</p>
+  </body>
+</html>

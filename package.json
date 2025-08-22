@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-  "build": "vite build --outDir docs && cp -R src/pages docs/pages || true && cp -R src/components docs/components || true",
+  "build": "vite build --outDir docs && cp -R src/pages docs/pages || true && cp -R src/components docs/components || true && node ./scripts/generate_spa_pages.cjs",
     "preview": "vite preview",
     "lint": "eslint src/**/*.js",
     "lint:security": "eslint --ext .js src/ --config .eslintrc.json",
