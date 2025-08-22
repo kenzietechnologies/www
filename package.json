@@ -1,0 +1,38 @@
+{
+  "name": "kenzie_technologies",
+  "description": "",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+  "build": "vite build --outDir docs && cp -R src/pages docs/pages || true && cp -R src/components docs/components || true",
+    "preview": "vite preview",
+    "lint": "eslint src/**/*.js",
+    "lint:security": "eslint --ext .js src/ --config .eslintrc.json",
+    "audit": "npm audit",
+    "audit:fix": "npm audit fix",
+    "security-check": "npm run lint:security && npm run audit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenzietechnologies/www.git"
+  },
+  "keywords": [],
+  "author": "Ian Rand McKenzie",
+  "license": "Copyright © Ian Rand McKenzie 2025, All Rights Reserved where applicable.",
+  "bugs": {
+    "url": "https://github.com/kenzietechnologies/www/issues"
+  },
+  "homepage": "https://www.kenzietechnologies.com",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.10",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.57.1",
+    "eslint-plugin-security": "^1.7.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.10",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {}
+}

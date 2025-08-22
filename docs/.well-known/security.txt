@@ -1,0 +1,5 @@
+Contact: mailto:hey@relentlesscurious.com
+Expires: 2026-07-05T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.kenzietechnologies.com/.well-known/security.txt
+Policy: https://www.kenzietechnologies.com/security-policy

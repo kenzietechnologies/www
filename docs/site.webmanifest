@@ -1,0 +1,21 @@
+{
+    "name": "Kenzie Technologies",
+    "short_name": "Kenzie Technologies",
+    "description": "Kenzie Technologies - the home for a suite of technology, art, and everything inbetween.",
+    "icons": [
+        {
+            "src": "/public/favicon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/public/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#1F1F1F",
+    "background_color": "#1F1F1F",
+    "display": "standalone",
+    "start_url": "/"
+}

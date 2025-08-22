@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security Policy - Kenzie Technologies</title>
+    <meta name="description" content="Kenzie Technologies security policy and responsible disclosure guidelines for reporting security vulnerabilities." />
+    <meta name="keywords" content="security policy, responsible disclosure, vulnerability reporting, cybersecurity" />
+    <meta name="author" content="Kenzie Technologies" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1f2937" />
+
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Kenzie Technologies" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Accessibility meta tags -->
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="Security Policy - Kenzie Technologies" />
+    <meta property="og:description" content="Kenzie Technologies security policy and responsible disclosure guidelines for reporting security vulnerabilities." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.kenzietechnologies.com/security-policy" />
+    <meta property="og:site_name" content="Kenzie Technologies" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Security Policy - Kenzie Technologies" />
+    <meta name="twitter:description" content="Kenzie Technologies security policy and responsible disclosure guidelines for reporting security vulnerabilities." />
+    <meta name="twitter:site" content="@rlntlsscurious" />
+
+    <link rel="canonical" href="https://www.kenzietechnologies.com/" />
+
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body class="bg-black text-[#00ff00] min-h-screen font-mono overflow-y-scroll">
+    <!-- Skip to main content link for keyboard navigation -->
+    <a href="#main-sec-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded focus:underline">Skip to main content</a>
+
+    <header class="container mx-auto">
+      <nav class="mx-auto max-w-7xl px-6 lg:px-8" aria-label="Main navigation">
+        <div class="flex w-full items-center justify-between border-b border-green-500 py-6 lg:border-none">
+          <div class="flex items-center">
+            <a href="/" class="focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent rounded">
+              <img src="./rGb-rC-icon.svg" class="w-12 h-12 inline mr-2 mb-2">
+              <span class="text-2xl font-bold text-[#00ff00]">Kenzie Technologies</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-sec-content" class="mx-auto max-w-4xl px-6 lg:px-8 py-12">
+      <div class="prose prose-invert max-w-none">
+        <h1 class="text-4xl font-bold text-[#00ff00] mb-8">Security Policy</h1>
+
+        <div class="bg-gray-900 rounded-lg p-6 mb-8 border border-gray-700">
+          <p class="text-lg text-[#00ff00] mb-4">
+            At Kenzie Technologies, we take security seriously. This policy outlines our commitment to maintaining a secure environment for our users and provides guidelines for responsible disclosure of security vulnerabilities.
+          </p>
+        </div>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-[#00ff00] mb-4">Reporting Security Vulnerabilities</h2>
+          <div class="bg-gray-900 rounded-lg p-6 border border-gray-700">
+            <p class="text-[#00ff00] mb-4">
+              If you discover a security vulnerability in our systems, please report it responsibly by contacting our developer, Ian, at:
+            </p>
+            <div class="bg-gray-900 rounded p-4 border border-gray-600 mb-4">
+              <p class="text-[#00ff00] font-mono">contact@kenzietechnologies.com</p>
+            </div>
+            <p class="text-[#00ff00] mb-4">
+              Please include the following information in your report:
+            </p>
+            <ul class="list-disc list-inside text-[#00ff00] space-y-2">
+              <li>Description of the vulnerability</li>
+              <li>Steps to reproduce the issue</li>
+              <li>Potential impact assessment</li>
+              <li>Suggested remediation (if applicable)</li>
+              <li>Your contact information for follow-up</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-[#00ff00] mb-4">Response Timeline</h2>
+          <div class="bg-gray-900 rounded-lg p-6 border border-gray-700">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-gray-900 rounded p-4 border border-gray-600">
+                <h3 class="text-lg font-semibold text-[#00ff00] mb-2">Initial Response</h3>
+                <p class="text-[#00ff00]">Within 48 hours of receiving your report</p>
+              </div>
+              <div class="bg-gray-900 rounded p-4 border border-gray-600">
+                <h3 class="text-lg font-semibold text-[#00ff00] mb-2">Investigation</h3>
+                <p class="text-[#00ff00]">Within 7 days for initial assessment</p>
+              </div>
+              <div class="bg-gray-900 rounded p-4 border border-gray-600">
+                <h3 class="text-lg font-semibold text-[#00ff00] mb-2">Resolution</h3>
+                <p class="text-[#00ff00]">Timeline varies based on severity</p>
+              </div>
+              <div class="bg-gray-900 rounded p-4 border border-gray-600">
+                <h3 class="text-lg font-semibold text-[#00ff00] mb-2">Disclosure</h3>
+                <p class="text-[#00ff00]">After fix is deployed and verified</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-[#00ff00] mb-4">Scope</h2>
+          <div class="bg-gray-900 rounded-lg p-6 border border-gray-700">
+            <h3 class="text-lg font-semibold text-[#00ff00] mb-3">In Scope</h3>
+            <ul class="list-disc list-inside text-[#00ff00] space-y-2 mb-4">
+              <li>www.kenzietechnologies.com and all subdomains</li>
+              <li>Web applications and APIs</li>
+              <li>Smart contracts (when deployed)</li>
+              <li>Infrastructure vulnerabilities</li>
+              <li>Social engineering vulnerabilities</li>
+            </ul>
+
+            <h3 class="text-lg font-semibold text-[#00ff00] mb-3">Out of Scope</h3>
+            <ul class="list-disc list-inside text-[#00ff00] space-y-2">
+              <li>Third-party services we don't control</li>
+              <li>Social media accounts</li>
+              <li>Physical security issues</li>
+              <li>Denial of Service (DoS) attacks</li>
+              <li>Spam or social engineering attacks</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-[#00ff00] mb-4">Responsible Disclosure Guidelines</h2>
+          <div class="bg-gray-900 rounded-lg p-6 border border-gray-700">
+            <p class="text-[#00ff00] mb-4">We ask that security researchers:</p>
+            <ul class="list-disc list-inside text-[#00ff00] space-y-2">
+              <li>Allow us reasonable time to investigate and address the issue before public disclosure</li>
+              <li>Avoid accessing, modifying, or deleting user data</li>
+              <li>Do not perform testing that could degrade or damage our systems</li>
+              <li>Do not use social engineering, phishing, or physical attacks</li>
+              <li>Make a good faith effort to avoid privacy violations and data destruction</li>
+              <li>Contact us immediately if you inadvertently access sensitive data</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-[#00ff00] mb-4">Security Measures</h2>
+          <div class="bg-gray-900 rounded-lg p-6 border border-gray-700">
+            <p class="text-[#00ff00] mb-4">Our security implementation includes:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <h3 class="text-lg font-semibold text-[#00ff00]">Web Security</h3>
+                <ul class="list-disc list-inside text-[#00ff00] text-sm space-y-1">
+                  <li>Content Security Policy (CSP)</li>
+                  <li>HTTP Strict Transport Security (HSTS)</li>
+                  <li>X-Frame-Options protection</li>
+                  <li>Input validation and sanitization</li>
+                </ul>
+              </div>
+              <div class="space-y-2">
+                <h3 class="text-lg font-semibold text-[#00ff00]">Data Protection</h3>
+                <ul class="list-disc list-inside text-[#00ff00] text-sm space-y-1">
+                  <li>Encryption in transit and at rest</li>
+                  <li>Regular security audits</li>
+                  <li>Access controls and monitoring</li>
+                  <li>Secure development practices</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-[#00ff00] mb-4">Recognition</h2>
+          <div class="bg-gray-900 rounded-lg p-6 border border-gray-700">
+            <p class="text-[#00ff00] mb-4">
+              We appreciate the security research community's efforts in keeping our platform secure. Researchers who responsibly disclose valid security vulnerabilities may be:
+            </p>
+            <ul class="list-disc list-inside text-[#00ff00] space-y-2">
+              <li>Acknowledged in our security advisory (with permission)</li>
+              <li>Listed in our hall of fame</li>
+              <li>Considered for our bug bounty program (when available)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-[#00ff00] mb-4">Legal Safe Harbor</h2>
+          <div class="bg-gray-900 rounded-lg p-6 border border-gray-700">
+            <p class="text-[#00ff00]">
+              Kenzie Technologies will not pursue legal action against security researchers who:
+            </p>
+            <ul class="list-disc list-inside text-[#00ff00] space-y-2 mt-4">
+              <li>Follow our responsible disclosure policy</li>
+              <li>Report vulnerabilities in good faith</li>
+              <li>Do not violate any applicable laws</li>
+              <li>Do not access, modify, or delete user data</li>
+              <li>Do not disrupt our services</li>
+            </ul>
+          </div>
+        </section>
+
+        <footer class="mt-12 pt-8 border-t border-gray-700">
+          <div class="text-center">
+            <p class="text-[#00ff00] text-sm">
+              Last updated: July 15, 2025
+            </p>
+            <p class="text-[#00ff00] text-sm mt-2">
+              This policy is subject to change. Check back regularly for updates.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

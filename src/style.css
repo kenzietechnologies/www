@@ -1,0 +1,16 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+
+:root {
+	--font-sans: 'Raleway', sans-serif;
+	--font-serif: 'Grenze Gotisch', serif;
+	--font-cursive: 'Borel', cursive;
+}
+
+/* Use the configured sans as the default document font */
+html, body {
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
