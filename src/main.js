@@ -179,6 +179,11 @@ function bindInternalLinks(root = document) {
 			ev.preventDefault();
 			history.pushState({}, '', href);
 			loadPage(href);
+			// If the mobile dropdown is open, close it so nav hides on mobile after click
+			const mobile = document.getElementById('mobileDropdown');
+			if (mobile && !mobile.classList.contains('hidden')) {
+				mobile.classList.add('hidden');
+			}
 		});
 	});
 }
@@ -201,6 +206,11 @@ function initRouter() {
 			ev.preventDefault();
 			history.pushState({}, '', href);
 			loadPage(href);
+			// Close mobile menu if open (useful for clicks from the mobile nav)
+			const mobile = document.getElementById('mobileDropdown');
+			if (mobile && !mobile.classList.contains('hidden')) {
+				mobile.classList.add('hidden');
+			}
 		}
 	});
 }

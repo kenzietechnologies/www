@@ -1,4 +1,4 @@
-<div class="bg-slate-50 dark:bg-zinc-800 mt-12 py-24 sm:py-32">
+const e=`<div class="bg-slate-50 dark:bg-zinc-800 mt-12 py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-4 lg:mx-0 lg:max-w-none lg:grid-cols-3">
       <h2 class="text-3xl font-bold font-serif tracking-tight text-zinc-900 dark:text-slate-100 sm:text-4xl">Our Products and Services</h2>
@@ -75,3 +75,4 @@
     </div>
   </div>
 </div>
+`;export{e as default};

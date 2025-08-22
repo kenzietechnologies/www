@@ -1,4 +1,4 @@
-<main class="bg-zinc-100 dark:bg-zinc-700 py-24 sm:py-32">
+const e=`<main class="bg-zinc-100 dark:bg-zinc-700 py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-8">
     <div class="mx-auto max-w-2xl space-y-16 divide-y divide-slate-400 lg:mx-0 lg:max-w-none">
       <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
@@ -94,3 +94,4 @@
     </div>
   </div>
 </main>
+`;export{e as default};
