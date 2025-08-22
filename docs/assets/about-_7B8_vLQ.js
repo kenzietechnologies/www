@@ -1,4 +1,4 @@
-<main class="bg-slate-50 dark:bg-zinc-800 mx-auto pt-24">
+const e=`<main class="bg-slate-50 dark:bg-zinc-800 mx-auto pt-24">
   <!-- Hero Section -->
   <section class="px-12 text-center py-16 dark:bg-zinc-950 bg-slate-50 bg-cover bg-center bg-no-repeat bg-[url('/about/.cover.jpg}}')]">
     <h1 class="text-5xl font-serif font-bold text-zinc-800 dark:text-slate-300">About Us</h1>
@@ -93,3 +93,4 @@
   </section>
 </main>
 
+`;export{e as default};

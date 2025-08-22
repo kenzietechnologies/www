@@ -1,4 +1,4 @@
-<footer aria-labelledby="footer-heading" class="relative z-10 bg-slate-100 dark:bg-zinc-800">
+const e=`<footer aria-labelledby="footer-heading" class="relative z-10 bg-slate-100 dark:bg-zinc-800">
   <div class="mx-auto max-w-7xl px-6 pb-8 pt-4 lg:px-8">
     <div class="md:flex md:items-center md:justify-between lg:px-8">
       <div class="my-8 mr-4 pt-4 text-base leading-5 dark:text-slate-300 text-slate-600 md:order-1 md:my-0">
@@ -65,3 +65,4 @@
     </div>
   </div>
 </footer>
+`;export{e as default};

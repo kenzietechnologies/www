@@ -16,6 +16,40 @@ const ROUTES = {
 	'/terms-of-service': '/pages/terms-of-service.html'
 };
 
+// Vite-friendly raw imports (fast in dev). These will be transformed by Vite
+// into functions that return the raw file contents. If available, prefer these
+// to avoid fetch race conditions during development.
+const pageModules = import.meta.glob('/src/pages/*.html', { as: 'raw' });
+const compModules = import.meta.glob('/src/components/*.html', { as: 'raw' });
+
+async function loadFromModules(url) {
+	// Accept URLs like /src/pages/home.html or /pages/home.html
+	if (!url) return null;
+	const candidates = [];
+	if (url.startsWith('/src/')) candidates.push(url);
+	if (url.startsWith('/')) candidates.push(`/src${url}`);
+	// Also accept without leading slash
+	if (!url.startsWith('/')) candidates.push(`/src/${url}`);
+
+	for (const c of candidates) {
+		if (pageModules[c]) {
+			try {
+				return await pageModules[c]();
+			} catch (e) {
+				// ignore and continue
+			}
+		}
+		if (compModules[c]) {
+			try {
+				return await compModules[c]();
+			} catch (e) {
+				// ignore
+			}
+		}
+	}
+	return null;
+}
+
 async function fetchText(url) {
 	try {
 		const res = await fetch(url, { cache: 'no-store' });
@@ -43,20 +77,29 @@ async function fetchFirst(urls) {
 }
 
 async function insertHTML(position, html) {
-	const container = document.createElement('div');
-	container.innerHTML = html;
-	if (position === 'prepend') document.body.prepend(container);
-	else document.body.append(container);
-	return container;
+	const template = document.createElement('template');
+	template.innerHTML = html.trim();
+	const fragment = template.content;
+	if (position === 'prepend') {
+		// Insert fragment before the first child
+		document.body.insertBefore(fragment, document.body.firstChild);
+		// Return the first inserted node for reference
+		return document.body.firstChild;
+	} else {
+		document.body.appendChild(fragment);
+		return document.body.lastChild;
+	}
 }
 
 async function loadComponents() {
 	// Top nav -> prepend so it's above page content
-			const topNavHtml = await fetchFirst(['/components/top_nav.html', '/src/components/top_nav.html']);
+	let topNavHtml = await loadFromModules('/src/components/top_nav.html');
+	if (!topNavHtml) topNavHtml = await fetchFirst(['/components/top_nav.html', '/src/components/top_nav.html']);
 	await insertHTML('prepend', topNavHtml);
 
 	// Footer -> append
-			const footerHtml = await fetchFirst(['/components/footer.html', '/src/components/footer.html']);
+	let footerHtml = await loadFromModules('/src/components/footer.html');
+	if (!footerHtml) footerHtml = await fetchFirst(['/components/footer.html', '/src/components/footer.html']);
 	await insertHTML('append', footerHtml);
 
 	// Populate dynamic bits (like copyright year)
@@ -75,9 +118,12 @@ async function loadPage(pathname = location.pathname) {
 	const path = normalizePath(pathname);
 	const pageUrl = ROUTES[path] || ROUTES['/'];
 
-		// Try production path first, then fallback to src/ (useful during dev)
-		const fallback = pageUrl.startsWith('/') ? `/src${pageUrl}` : `src/${pageUrl}`;
-		const contentHtml = await fetchFirst([pageUrl, fallback]);
+			// Try to load via Vite modules (dev) before fetching at runtime
+			let contentHtml = await loadFromModules(pageUrl) || await loadFromModules(`/src${pageUrl}`);
+			if (!contentHtml) {
+				const fallback = pageUrl.startsWith('/') ? `/src${pageUrl}` : `src/${pageUrl}`;
+				contentHtml = await fetchFirst([pageUrl, fallback]);
+			}
 
 	// Remove any previous page container
 	const existing = document.getElementById('page-content');
@@ -161,10 +207,35 @@ function initRouter() {
 }
 
 async function boot() {
-	await loadComponents();
-	await loadPage(location.pathname);
+	try {
+		console.debug('Loading components...');
+		await loadComponents();
+	} catch (err) {
+		console.error('Failed to load components:', err);
+	}
+
+	try {
+		console.debug('Loading initial page:', location.pathname);
+		await loadPage(location.pathname);
+	} catch (err) {
+		console.error('Failed to load initial page:', err);
+	}
+
 	initRouter();
 }
 
-// Start the client loader
-document.addEventListener('DOMContentLoaded', boot);
+// Start the client loader. Modules are deferred; if the document has already
+// finished loading, call boot immediately to avoid missing the DOMContentLoaded event.
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', boot);
+} else {
+	// Already loaded
+	try {
+		boot();
+	} catch (err) {
+		console.error('Error during boot:', err);
+	}
+}
+
+// Helpful visibility while developing
+console.debug('Client loader initialized');
